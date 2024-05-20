@@ -1,2 +1,4 @@
 *.img
 *.log
+notes.txt
+__pycache__
