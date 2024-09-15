@@ -2,8 +2,8 @@
 
 ## Pre-requisites:
 1. Basic Python - https://www.youtube.com/watch?v=rfscVS0vtbw
-2. Basic Git - https://www.youtube.com/watch?v=hrTQipWp6co&t=6s
-3. Basic Linux - https://www.youtube.com/watch?v=ROjZy1WbCIA&t=8662s
+2. Basic Git - https://www.youtube.com/watch?v=hrTQipWp6co
+3. Basic Linux - https://www.youtube.com/watch?v=ROjZy1WbCIA
 
 ## Project Genesis
 
