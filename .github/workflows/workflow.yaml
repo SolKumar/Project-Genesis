@@ -2,17 +2,17 @@ name: "My First Workflow"
 on: push
 
 jobs:
-    my_first_job:
-        runs-on: ubuntu-latest
-        steps:
-            - name: "Welcome message"
-              run: echo "My First Github Actions Job"
+  my_first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v4
 
-            - name: "Checkout"
-              uses: actions/checkout@v4
-
-            - name: "List out files in the repository"
-              run: ls -lrt
+      - name: "Inspect"
+        run: |
+          echo "Inspecting Git Repo"
+          ls -lart
+          cat README.md
 
             
 
