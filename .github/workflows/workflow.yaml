@@ -1,5 +1,5 @@
 name: "My First Workflow"
-on: push
+on: fork
 
 jobs:
   my_first_job:
