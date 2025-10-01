@@ -1,5 +1,5 @@
 name: "Workflow that utilizes Repo level variables"
-on: push
+on: workflow_dispatch
 jobs:
     validate_variables:
         name: "Validates that repo level variable has been utilized in the workflow"
