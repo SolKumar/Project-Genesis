@@ -1,0 +1,48 @@
+name: "Example Multistage Workflow"
+on: push
+jobs:
+  my_build_job:
+    name: "Build Stage"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout GitHub repo"
+        uses: actions/checkout@v4
+      - name: "Create Cowsay artifact"
+        run: |
+          cd naik/
+          chmod +x build_script.sh
+          ./build_script.sh
+      - name: "Uploading the artifact"
+        uses: actions/upload-artifact@v3
+        with:
+          name: "cowsay_ascii_artifact"
+          path: ./dragon.txt
+
+  my_test_job:
+    name: "Testing the built artifact"
+    needs: my_build_job
+    runs-on: ubuntu-latest
+    steps:
+        - name : "Downloading the build artifact"
+          uses: actions/download-artifact@v3
+          with:
+            name: "cowsay_ascii_artifact"
+        - name: "Validating the build artifact"
+          run: grep -i "dragon" dragon.txt
+    
+  my_deploy_job:
+    name: "Deploying the build artifact"
+    needs: my_test_job
+    runs-on: ubuntu-latest
+    steps:
+        - name: "Downloading the build artifact"
+          uses: actions/download-artifact@v3
+          with:
+            name: "cowsay_ascii_artifact"
+        - name: "Deploying the build artifact"
+          run: cat dragon.txt
+        - name: "Post Deployment Task"
+          run: echo "Deployed artifact successfully"
+    
+
+
