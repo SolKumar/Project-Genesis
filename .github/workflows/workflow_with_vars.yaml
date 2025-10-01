@@ -1,0 +1,10 @@
+name: "Workflow that utilizes Repo level variables"
+on: push
+jobs:
+    validate_variables:
+        name: "Validates that repo level variable has been utilized in the workflow"
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Print out the repo level variable"
+              run: echo " ${{ vars.USER }} is the username in this repo! "
+        
