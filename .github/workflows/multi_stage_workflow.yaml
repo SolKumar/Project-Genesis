@@ -16,7 +16,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: "cowsay_ascii_artifact"
-          path: dragon.txt
+          path: naik/dragon.txt
 
   my_test_job:
     name: "Testing the built artifact"
