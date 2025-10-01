@@ -5,7 +5,7 @@ jobs:
     name: "My workflow that utilizes Matrix strategy"
     timeout-minutes: 5
     concurrency: 
-        cancel-in-progress: false
+        cancel-in-progress: true
         group: my_deployment_group
     strategy:
       fail-fast: false
