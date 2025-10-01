@@ -6,10 +6,12 @@ jobs:
     steps:
         - name: "Checkout the repo"
           uses: actions/checkout@v4
-        - name: "Install Cowsay"
-          run: sudo apt-get install -y cowsay
-        - name: "Execute the Cowsay command"
-          run: | 
-            cowsay -f dragon "Run boy run a Dragon is in town" >> dragon.txt
-            grep -i "dragon" dragon.txt
+        - name: "Execute Shell Script for ASCII Art Generation"
+          run: |
+            cd naik/
+            chmod +x ascii_generation.sh
+            ./ascii_generation.sh
+        - name: "Post Execution Tasks"
+          run: echo "Thus the execution was completed"
+
         
