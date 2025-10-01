@@ -1,0 +1,33 @@
+name: "Workflow that leverages matrix strategy"
+on: push
+jobs:
+  my_matrix_workflow:
+    name: "My workflow that utilizes Matrix strategy"
+    timeout-minutes: 5
+    concurrency: 
+        cancel-in-progress: false
+        group: my_deployment_group
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        os: [ubuntu-latest,windows-latest]
+        images: [hello-world,alpine]
+        exclude:
+          - images: alpine
+            os: windows-latest
+        include:
+          - images: amd64/alpine
+            os: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: "Check Docker Details"
+        run: docker info
+      - name: "Run the docker image ${{ matrix.images }} on ${{ matrix.os }}"
+        run: docker run ${{ matrix.images }}
+       
+    
+
+  
+      
+
