@@ -13,10 +13,10 @@ jobs:
           chmod +x build_script.sh
           ./build_script.sh
       - name: "Uploading the artifact"
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: "cowsay_ascii_artifact"
-          path: ./dragon.txt
+          path: dragon.txt
 
   my_test_job:
     name: "Testing the built artifact"
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name : "Downloading the build artifact"
-          uses: actions/download-artifact@v3
+          uses: actions/download-artifact@v4
           with:
             name: "cowsay_ascii_artifact"
         - name: "Validating the build artifact"
@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: "Downloading the build artifact"
-          uses: actions/download-artifact@v3
+          uses: actions/download-artifact@v4
           with:
             name: "cowsay_ascii_artifact"
         - name: "Deploying the build artifact"
