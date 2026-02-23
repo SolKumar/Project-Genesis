@@ -13,7 +13,7 @@
 
 3. ### Sepoy-2 - Adding Bootstrap and CSS for the UI : https://github.com/SolKumar/Project-Genesis/tree/main/sepoy-2
 
-4. ### Naik - Working with GitHub Actions
+4. ### Naik - CI/CD via GitHub Actions
 
 
 
