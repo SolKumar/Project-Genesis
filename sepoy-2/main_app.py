@@ -13,13 +13,13 @@ posts = [
         'author': 'Teja',
         'title': 'Adding HTML templates to your first flask application',
         'content': 'Follow the steps here : https://github.com/SolKumar/Project-Genesis/tree/main/sepoy',
-        'date_posted': '26 Feb, 2024'
+        'date_posted': '26 Feb, 2025'
     },
     {
         'author': 'Kumar',
         'title': 'Using bootstrap for UI and turning simple flask app into blog app',
         'content': 'Follow the steps here : https://github.com/SolKumar/Project-Genesis/tree/main/sepoy-2',
-        'date_posted': '13 April, 2024'
+        'date_posted': '13 Feb, 2026'
     }
 ]
 
