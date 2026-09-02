@@ -1,0 +1,17 @@
+name: "hello_world_wf"
+description: "A simple workflow to test basics of GitA"
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: Enter your name
+        required: true
+        type: string
+jobs:
+  hello_world:
+    runs-on: ubuntu-slim
+    steps:
+      - name: "Say Hello"
+        env:
+          PERSON_NAME: ${{ inputs.name }}
+        run: echo "Hello $PERSON_NAME"
